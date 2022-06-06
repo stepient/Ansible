@@ -1,0 +1,10 @@
+---
+- name: Test playbook
+  hosts: localhost
+  gather_facts: no
+  tasks:
+  
+    - name: Write message
+      msg:
+        debug: Hello IaC community!
+    
