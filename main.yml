@@ -5,6 +5,6 @@
   tasks:
   
     - name: Write message
-      msg:
-        debug: Hello IaC community!
+      debug:
+        msg: Hello IaC community!
     
