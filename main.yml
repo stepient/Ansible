@@ -6,5 +6,5 @@
   
     - name: Write message
       debug:
-        msg: Hello Capgemini!
+        msg: Hello World!
     
