@@ -14,11 +14,8 @@
       
     - debug: var=whoami
         
-    - name: /etc/hosts
-      lineinfile:
-        path: /etc/hosts
-        state: absent
-        regexp: 'test'
-      
-
+    - name: Create file in /etc
+      file:
+        path: /etc/test1.txt
+        state: present
     
