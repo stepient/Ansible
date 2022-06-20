@@ -19,7 +19,7 @@
       ansible.builtin.file:
         path: /etc/some_directory_1
         state: absent
-      become: true
+      #become: true
       #become_user: sudouser
       #become_password: Welcome123
         #mode: '0755'
