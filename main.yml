@@ -9,7 +9,7 @@
         msg: Hello World!
         
     - name: /etc/hosts
-      ansible.builtin.lineinfile:
+      lineinfile:
         path: /etc/hosts
         state: absent
         regexp: 'test'
