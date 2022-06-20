@@ -12,7 +12,7 @@
       command: echo test >> /etc/hosts
       
     - name: whoami
-      command: whoami
+      command: ifconfig
       register: whoami
       
     - debug: var=whoami
