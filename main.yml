@@ -11,7 +11,7 @@
     - name: /etc/hosts
       ansible.builtin.lineinfile:
         path: /etc/hosts
-        state: present
+        state: absent
         regexp: 'test'
       
     - name: whoami
