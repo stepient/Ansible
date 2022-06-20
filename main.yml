@@ -13,4 +13,7 @@
       
     - name: whoami
       command: whoami
+      register: whoami
+      
+    - debug: var=whoami
     
