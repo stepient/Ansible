@@ -18,6 +18,7 @@
         path: /etc/some_directory
         state: directory
       become: true
-      #become_user: sudouser
+      become_user: sudouser
+      become_password: Welcome123
         #mode: '0755'
     
