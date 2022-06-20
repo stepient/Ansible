@@ -8,15 +8,17 @@
       debug:
         msg: Hello World!
         
+    - name: whoami
+      command: whoami
+      register: whoami
+      
+    - debug: var=whoami
+        
     - name: /etc/hosts
       lineinfile:
         path: /etc/hosts
         state: absent
         regexp: 'test'
       
-    - name: whoami
-      command: whoami
-      register: whoami
-      
-    - debug: var=whoami
+
     
