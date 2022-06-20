@@ -3,6 +3,8 @@
   hosts: all
   gather_facts: no
   become: true
+  become_user: sudouser
+  become_method: su
   tasks:
   
     - name: show user id
