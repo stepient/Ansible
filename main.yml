@@ -2,9 +2,9 @@
 - name: Test playbook
   hosts: all
   gather_facts: no
-  #become: true
-  #become_user: sudouser
-  #become_method: su
+  become: true
+  become_user: root
+  become_method: sudo
   tasks:
   
     - name: show user id
