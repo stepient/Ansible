@@ -1,10 +1,13 @@
 ---
 - name: Test playbook
-  hosts: localhost
+  hosts: all
   gather_facts: no
   tasks:
   
     - name: Write message
       debug:
         msg: Hello World!
+        
+    - name: Append a line to /etc/hosts
+      command: echo test >> /etc/hosts
     
