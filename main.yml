@@ -5,9 +5,8 @@
   become: true
   tasks:
   
-    - name: Write message
-      debug:
-        msg: Hello World!
+    - name: show user id
+      shell: id
         
     - name: whoami
       command: whoami
@@ -19,5 +18,5 @@
       ansible.builtin.file:
         path: /etc/some_directory
         state: directory
-        mode: '0755'
+        #mode: '0755'
     
