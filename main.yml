@@ -19,6 +19,6 @@
         state: directory
       become: true
       become_user: sudouser
-      become_password: Welcome123
+      #become_password: Welcome123
         #mode: '0755'
     
