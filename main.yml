@@ -2,6 +2,7 @@
 - name: Test playbook
   hosts: all
   gather_facts: no
+  become: true
   tasks:
   
     - name: Write message
