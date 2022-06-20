@@ -17,5 +17,5 @@
     - name: Create file in /etc
       file:
         path: /etc/test1.txt
-        state: present
+        state: file
     
