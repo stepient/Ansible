@@ -1,0 +1,45 @@
+---
+- name: Create some files
+  hosts: jenkins
+  gather_facts: no
+  vars_files:
+    - vars.yml
+  tasks:
+  
+    - name: Get user ID
+      shell: id
+      register: user_id
+
+    - debug: var=user_id.stdout_lines
+
+    - name: Create file /home/user1/ansible.yml
+      file:
+        path: /home/user1/ansible.yml
+        state: touch
+      # become: true
+      # become_method: su
+      # become_user: user1
+    
+      
+    - name: Get user ID
+      shell: id
+      register: user_id
+
+    - debug: var=user_id.stdout_lines
+
+    - name: Create file /home/admin1/ansible.yml
+      file:
+        path: /home/admin1/ansible.yml
+        state: absent
+      become: true
+      become_method: su
+      become_user: admin1
+      vars:
+        ansible_become_password: "{{ sudo_password }}"
+
+
+    # - name: Create file /etc/some_file.yml
+    #   file:
+    #     path: /etc/some_file.yml
+    #     state: touch
+      #become_user: admin1

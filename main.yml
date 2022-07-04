@@ -1,6 +1,6 @@
 ---
 - name: Test playbook
-  hosts: all
+  hosts: jenkins
   gather_facts: no
   tasks:
   
@@ -18,7 +18,7 @@
     - name: Create a directory if it does not exist
       ansible.builtin.file:
         path: /etc/some_directory_1
-        state: absent
+        state: present
       #become: true
       #become_user: sudouser
       #become_password: Welcome123

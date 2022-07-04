@@ -1,0 +1,13 @@
+---
+- name: Create user
+  hosts: jenkins
+  gather_facts: no
+  vars_files:
+    - vars.yml
+  tasks:
+  
+    - name: Add the user 'user1'
+      ansible.builtin.user:
+        name: user1
+        password: $6$f4rW2rkb1i7$jggL8cclKA9EfqQAEsj2VRwSAqZd0Vom0/mfsLLT.1VZNWMdvU2cta8HxjLCJpu5BSBIfd.WhAuOW1ElW/tsm0
+        state: present
