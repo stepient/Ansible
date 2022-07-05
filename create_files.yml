@@ -2,8 +2,8 @@
 - name: Create some files
   hosts: jenkins
   gather_facts: no
-  vars_files:
-    - vars.yml
+  # vars_files:
+  #   - vars.yml
   tasks:
   
     - name: Get user ID
@@ -16,6 +16,7 @@
       file:
         path: /home/user1/ansible.yml
         state: touch
+      #remote_user: user1
       # become: true
       # become_method: su
       # become_user: user1
@@ -27,15 +28,16 @@
 
     - debug: var=user_id.stdout_lines
 
-    - name: Create file /home/admin1/ansible.yml
+    - name: Create file /home/admin2/ansible.yml
       file:
-        path: /home/admin1/ansible.yml
-        state: absent
-      become: true
-      become_method: su
-      become_user: admin1
-      vars:
-        ansible_become_password: "{{ sudo_password }}"
+        path: /home/admin2/ansible.yml
+        state: touch
+      remote_user: admin2
+      # become: true
+      # become_method: su
+      # become_user: admin1
+      # vars:
+      #   ansible_become_password: "{{ sudo_password }}"
 
 
     # - name: Create file /etc/some_file.yml

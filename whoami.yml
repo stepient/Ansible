@@ -1,0 +1,14 @@
+- name: Get user identity
+  hosts: jenkins
+  gather_facts: no
+  tasks:
+
+    - shell: whoami
+      register: whoami_result
+    
+    - debug: var=whoami_result.stdout
+
+    - shell: id
+      register: id_result
+    
+    - debug: var=id_result.stdout
