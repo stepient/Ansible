@@ -28,11 +28,14 @@
 
     - debug: var=user_id.stdout_lines
 
+    - debug: var=ansible_user
+    - debug: var=remote_user
+
     - name: Create file /home/admin2/ansible.yml
       file:
         path: /home/admin2/ansible.yml
         state: touch
-      remote_user: admin2
+      remote_user: "{{ remote_user }}"
       # become: true
       # become_method: su
       # become_user: admin1
