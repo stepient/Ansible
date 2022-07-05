@@ -1,0 +1,55 @@
+---
+- name: Create some files
+  hosts: jenkins
+  gather_facts: false
+  vars_files:
+    - vars.yml
+  tasks:
+
+  
+    - name: Get user ID - main user
+      shell: id
+      register: user_id
+
+    - debug: var=user_id.stdout_lines
+
+
+    # - name: Get user ID - become user
+    #   shell: id
+    #   register: become_user_id
+
+    # - debug: var=become_user_id.stdout_lines
+
+
+    # - name: Get user ID - remote_user
+    #   shell: id
+    #   register: remote_user_id
+
+    # - debug: var=remote_user_id.stdout_lines
+
+
+    - name: Create file /home/user1/ansible.yml
+      file:
+        path: /home/user1/ansible.yml
+        state: "{{ state }}"
+
+
+    - name: Create file /home/admin2/ansible.yml
+      file:
+        path: /home/admin2/ansible.yml
+        state: "{{ state }}"
+      remote_user: admin2
+
+
+    - name: Create file /etc/ansible.yml
+      file:
+        path: /etc/ansible.yml
+        state: "{{ state }}"
+
+
+
+    - name: Create file /root/ansible.yml
+      file:
+        path: /root/ansible.yml
+        state: "{{ state }}"
+
