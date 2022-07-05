@@ -35,7 +35,8 @@
       file:
         path: /home/admin2/ansible.yml
         state: touch
-      remote_user: "{{ remote_user }}"
+      vars:
+        ansible_remote_user: "{{ remote_user }}"
       # become: true
       # become_method: su
       # become_user: admin1
