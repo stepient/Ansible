@@ -22,9 +22,10 @@
       # become_user: user1
     
       
-    - name: Get user ID
+    - name: Get user ID - remote user
       shell: id
       register: user_id
+      remote_user: "{{ remote_user }}"
 
     - debug: var=user_id.stdout_lines
 
@@ -35,8 +36,7 @@
       file:
         path: /home/admin2/ansible.yml
         state: touch
-      vars:
-        ansible_remote_user: "{{ remote_user }}"
+      remote_user: "{{ remote_user }}"
       # become: true
       # become_method: su
       # become_user: admin1
