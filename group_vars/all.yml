@@ -1,5 +1,5 @@
 ---
-ansible_user: user1
+#ansible_user: user1
 # ansible_password: !vault |
 #           $ANSIBLE_VAULT;1.1;AES256
 #           38303562613866303036343736323531613237643832393533653561643465633236623838623438
