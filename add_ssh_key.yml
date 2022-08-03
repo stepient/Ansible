@@ -1,0 +1,9 @@
+- name: Add ssh key
+  hosts: jenkins
+  gather_facts: no
+  tasks:
+    - name: Set authorized key taken from file
+      ansible.posix.authorized_key:
+        user: user1
+        state: present
+        key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDTt6GNxRlkOtFQjTSepfuVBTA+FZLgnVU0RQZFzOdMlMBC3rFoOeW1Pqedx6n6FZHN+aYKaImgzqR0Oqtcs62TQN65ayIvGr+yAu38saa29UR1kSqiYYoeoccx9yj/KOAI2NWSiOOvC+mIKHaFXuHKI0rLz97t/XTlNZu3pfIG2WO+qXaFRDCXTz7XOaurelk1kc+zOGnxwwnE9qrJKwvmOMWgjvDaj0f5BeXKxHYERr2UBmzlisbF018o2QktM5WIocwgOBcZPIh3Cx4VvL6DAKGI0/5A5yUFfi21FM9iBBUb32yqq3qiCs3/gCw79IFmGXD5XKo6+Gay88zAMWzPX5GL3E/JXwXRjc9zs5IsgsQFyK3Q1lMmf5gUrsRy6IARZzjStE0CttA8dDMj+NHfWJw9Q3Z1N6xVSGAcnQfHOb0kGoPWNUTJ2q4Fhe2akZZfe4u8338u0kGzMRM81INBCjDMJ4QyrOPytlU4uDFAxl8VdncBn+o7V0W7+smLoh0= tstepien@LPOL-PF1WKFQ5
