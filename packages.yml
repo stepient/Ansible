@@ -1,0 +1,9 @@
+---
+- name: Install packages
+  hosts: jenkins
+  gather_facts: no
+  tasks:
+    - name: install git
+      dnf:
+        name: git
+        state: "{{ state }}"
